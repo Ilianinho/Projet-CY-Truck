@@ -300,25 +300,6 @@ fi
 
 
 
-#COMPILATION : 
- #for executable in "${executables[@]}"; do
-    #chemin_complet="$executable_parent/$executable"
-   # if [ ! -f "$chemin_complet" ]; then
-       # echo "L'exécutable $executable n'est pas présent. Compilation en cours..."
-        
-        # Compiler le code source
-       # make -C progc
-        
-        # Vérifier si la compilation s'est bien déroulée
-       # if [ $? -ne 0 ]; then
-            #echo "Erreur lors de la compilation."
-            #exit 1
-        #fi
-    #fi
-#done
-
-
-
 
 
 
