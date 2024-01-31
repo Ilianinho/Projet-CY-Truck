@@ -174,63 +174,15 @@ EOF
 
 App_t() 
 {
-    cut -d';' -f1,5 data/data.csv |
-    awk -v OFS=';' -F';' 'NR>1 { route_lengths_sum[$1]+= $2;} END {for (route_id in route_lengths_sum) {print route_id, route_lengths_sum[route_id];}}' |
-    sort -t";" -k2nr |
-    head -n10 > temp/temp_lflag.csv
-
-# azefazfa
-    awk -v OFS='; ' -F';' '{print $2, $1}' temp/temp_lflag.csv > temp/histogram_l_data.csv
-
-    # Set up the histogram configurations and plot the histogram
-    gnuplot <<-EOF
-    set terminal png size 1500,600
-    set output 'images/histogram_l.png'
-    set title " Total Distance by route ID "
-    set ylabel "Total Distance(km)
-    set xlabel "Route ID"
-    set style data histograms
-    set style fill solid border -1
-    set yrange [0:3000]
-    set boxwidth 0.8
-    set ytic 600
-    plot 'temp/histogram_l_data.csv' using 1:xtic(2) notitle
-    
-    
-    
-EOF
+    log "pas encore..."
   
 }
 App_s() 
 {
-    cut -d';' -f1,5 data/data.csv |
-    awk -v OFS=';' -F';' 'NR>1 { route_lengths_sum[$1]+= $2;} END {for (route_id in route_lengths_sum) {print route_id, route_lengths_sum[route_id];}}' |
-    sort -t";" -k2nr |
-    head -n10 > temp/temp_lflag.csv
-
-# Create histogram data file
-    awk -v OFS='; ' -F';' '{print $2, $1}' temp/temp_lflag.csv > temp/histogram_l_data.csv
-
-    # Set up the histogram configurations and plot the histogram
-    gnuplot <<-EOF
-    set terminal png size 1500,600
-    set output 'images/histogram_l.png'
-    set title " Total Distance by route ID "
-    set ylabel "Total Distance(km)
-    set xlabel "Route ID"
-    set style data histograms
-    set style fill solid border -1
-    set yrange [0:3000]
-    set boxwidth 0.8
-    set ytic 600
-    plot 'temp/histogram_l_data.csv' using 1:xtic(2) notitle
-    
-    
-    
-EOF
+    clog "pas encore..."
   
 }
-#help 
+
 check() {
     if [ "$#" -eq 0 ]; then
         log "Aucun argument fourni. Utilisez l'option -h pour afficher l'aide."
