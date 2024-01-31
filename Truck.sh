@@ -60,7 +60,7 @@ help() {
     echo -e "\e[1m\e[92mNote:\e[0m Utilisez l'option -h pour afficher cette aide."
 }
 
-App_D1() 
+App_d1() 
 {
     grep '^[^;]*;1;' data/data.csv | awk -v OFS=';' -F';' '{ Traj[$6]++ } END {for (conducteur in Traj) print conducteur, Traj[conducteur] }' | sort -t';' -nrk2,2 | head -n10 > temp/first_d1flag.csv
     awk -v OFS=';' -F';' '{print $2, $1}' temp/first_d1flag.csv > temp/Final_d1.csv
@@ -98,7 +98,7 @@ convert -rotate 90 images/histogram_d1.png images/histogram_d1.png
 
     
 }
-App_D2() 
+App_d2() 
 {
     cut -d';' -f5,6 data/data.csv | awk -v OFS=';' -F';' 'NR>1 { Dist[$2]+=$1} END {for (conducteur in Dist) print conducteur, Dist[conducteur]}' | sort -t';' -nrk2,2 | head -n10 > temp/first_d2.csv
     awk -v OFS=';' -F';' '{print $2, $1}' temp/first_d2.csv > temp/Final_d2.csv
