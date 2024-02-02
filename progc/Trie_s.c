@@ -317,11 +317,8 @@ void CreateCSV(struct StateAVL* root) {  											// Function to create a CSV 
 
 
 
-
-
 int main() {
     FILE* file = fopen("temp/Result_s.txt", "r");
-    
     if (file == NULL) {		 // Checking if the file opening was successful
         fprintf(stderr, "Error opening the C file.\n");
         return 1;
@@ -350,7 +347,6 @@ int main() {
         pliste = pliste->next;
         free(temp);
     }
-
     return 0;
 }
 
