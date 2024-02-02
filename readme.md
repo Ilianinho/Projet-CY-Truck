@@ -48,6 +48,8 @@ Make sure you have the following prerequisites installed on your system:
     Gnuplot: Used for generating graphs from data.
     Make: Automation tool for building executable programs and libraries.
     ImageMagick: Software suite for image manipulation.
+    GhostWriter : For the readme.md
+    Powerpoint: For the PDF
 
 Installation :
 
